@@ -8,8 +8,22 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mdx-js/react": "^1.6.22",
+    "@tailwindcss/typography": "^0.4.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^9.0.0",
     "next": "10.0.9",
+    "next-compose-plugins": "^2.2.1",
+    "next-mdx-enhanced": "^5.0.0",
+    "next-optimized-images": "^2.6.2",
+    "next-seo": "^4.22.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.8",
+    "tailwindcss": "^2.0.4"
   }
 }
