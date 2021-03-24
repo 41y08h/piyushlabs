@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <>
       <Link href="/">
-        <a className="text-3xl font-extrabold f-mon">Piyush JS</a>
+        <a className="text-3xl font-extrabold f-mon">Piyush Labs</a>
       </Link>
       <div className="my-8 flex text-sm">
         <img
