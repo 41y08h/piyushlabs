@@ -5,6 +5,7 @@ export default function Footer() {
         Icons made by
         <a
           className="mx-2 underline"
+          target="blank"
           href="https://www.freepik.com"
           title="Freepik"
         >
@@ -13,6 +14,7 @@ export default function Footer() {
         from
         <a
           className="mx-2 underline"
+          target="blank"
           href="https://www.flaticon.com/"
           title="Flaticon"
         >
