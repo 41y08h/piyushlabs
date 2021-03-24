@@ -4,10 +4,7 @@ export default function Header() {
   return (
     <header>
       <Link href="/">
-        <a
-          className="font-extrabold  flex justify-center items-center"
-          role="logo"
-        >
+        <a className="font-extrabold  flex justify-center items-center">
           <img
             className="w-14 h-14 mr-4"
             src={require("../images/logo.svg")}
