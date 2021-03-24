@@ -4,15 +4,11 @@ html {
 }
 
 body {
-  font-family: "Merriweather", "Georgia", serif;
+  font-family: "Inter", sans-serif;
 }
 
 a {
   display: inline-block;
-}
-
-.f-mon {
-  font-family: "Montserrat", sans-serif;
 }
 
 :root {
