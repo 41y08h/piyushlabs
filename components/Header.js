@@ -2,23 +2,23 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <>
+    <header>
       <Link href="/">
-        <a className="text-3xl font-extrabold f-mon">Piyush Labs</a>
+        <a
+          className="font-extrabold  flex justify-center items-center"
+          role="logo"
+        >
+          <img
+            className="w-14 h-14 mr-4"
+            src={require("../images/logo.svg")}
+            alt="logo"
+          />
+          <div className="flex flex-col">
+            <span className="text-3xl f-mon logo-text">Piyush Labs</span>
+            <span className="font-light">Enforcing Learning-by-doing</span>
+          </div>
+        </a>
       </Link>
-      <div className="my-8 flex text-sm">
-        <img
-          className="w-16 h-auto rounded-full"
-          src={require("../images/piyush.jpg")}
-          alt="author"
-        />
-        <p className="flex flex-col ml-8 justify-center">
-          <span>
-            Written By <strong>Piyush</strong>, Full-Stack Developer
-          </span>
-          <span>Enforcing Learning-by-doing</span>
-        </p>
-      </div>
-    </>
+    </header>
   );
 }

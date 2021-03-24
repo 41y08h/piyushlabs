@@ -10,7 +10,7 @@ export default function Home({ posts }) {
   return (
     <Layout>
       <Seo {...{ title, description }} />
-      <main className="mt-16">
+      <main className="mt-16 text-center">
         {posts.map((post) => (
           <Post key={post.slug} post={post} />
         ))}
