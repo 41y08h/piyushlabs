@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
-    <footer className="flex justify-center py-4">
-      <div>
+    <footer className="py-4 text-gray-400">
+      <div className="mt-2 text-sm text-center">
         Icons made by
         <a
-          className="mx-2 underline"
+          className="mx-1"
           target="blank"
           href="https://www.freepik.com"
           title="Freepik"
@@ -13,7 +13,7 @@ export default function Footer() {
         </a>
         from
         <a
-          className="mx-2 underline"
+          className="mx-1"
           target="blank"
           href="https://www.flaticon.com/"
           title="Flaticon"

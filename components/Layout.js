@@ -19,7 +19,7 @@ export default function Layout({ children }) {
         <div className="bg-purple-500 h-12 transform rotate-12 -mt-4 -mx-6" />
       </div>
       <div className="max-w-3xl mx-auto">
-        <div className="p-8 pt-12 bg-white">
+        <div className="p-7 pt-12">
           <Header />
           {children}
           <Footer />
