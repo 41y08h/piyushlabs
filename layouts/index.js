@@ -11,7 +11,7 @@ export default function Index({ frontMatter, children }) {
           {frontMatter.title}
         </h1>
       </div>
-      <div className="prose mt-8">{children}</div>
+      <article className="prose mt-8">{children}</article>
     </Layout>
   );
 }
