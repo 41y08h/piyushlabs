@@ -1,8 +1,8 @@
 const config = {
-  title: "Piyush JS",
+  title: "Piyush LABS",
   description:
     "Written By Piyush, Full-Stack Developer. Enforcing learn-by-doing everyday.",
-  url: "https://piyushjs.com",
+  url: "https://piyushlabs.com",
 };
 
 export default config;
