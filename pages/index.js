@@ -18,7 +18,7 @@ export default function Home({ posts }) {
       />
       <main className="mt-12">
         {posts.map((post) => (
-          <Post key={post.slug} post={post} />
+          <Post key={post.frontMatter.title} post={post} />
         ))}
       </main>
     </Layout>

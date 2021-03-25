@@ -1,0 +1,57 @@
+---
+title: "Fix socket.io unsupported protocol version error"
+description: "Socket.io gives a headache, it says Unsupported protocol version error. Fixing this error might give you some additional errors, but let's fix it."
+publishedOn: "2021-03-25"
+tags: ["node.js", "socket.io", "websockets"]
+---
+
+```json
+{ "code": 5, "message": "Unsupported protocol version" }
+```
+
+## Why
+
+At this point, you must be familiar with this error that you are constantly getting with a 400 HTTP status code when you work with socket.io.
+This mostly happens when you change the version of your socket.io package or when the versions of your `socket.io` and `socket.io-client` mismatch. It may also happen when you haven't configured CORS properly.
+
+If you look at the documentation of <a href="https://socket.io/docs/v3/migrating-from-2-x-to-3-0/#CORS-handling" target="_blank">socket.io</a>, they say that cors are disabled by default in socket.io v3, so we need to configure CORS ourselves.
+
+## How
+
+### Server side configuration
+
+```js
+const socketIo = require("socket.io");
+
+// clientURL is the url of your frontend
+const options = { cors: true, origin: clientURL };
+const io = socketIo(port, options);
+```
+
+You must set `clientURL` conditionally based on `NODE_ENV` to development url or production app url so that it can work smoothly in development and in production.
+
+### Client side configuration
+
+```js
+const socket = io(backendURL);
+```
+
+Easy peasy configuration at client side.
+
+## Alternatives
+
+If your error hasn't resolved yet, tweaking this little property on the server may help. Tweaking this property is helpful when you have different versions of socket.io on the server and client.
+
+```js
+const socketIo = require("socket.io");
+
+// clientURL is the url of your frontend
+const options = {
+  cors: true,
+  origin: clientURL,
+  allowEIO3: true, // tweaking it may help
+};
+const io = socketIo(port, options);
+```
+
+If you still have this error and I recommend migrating to the latest versions both on the server and the client and changing according to the API changes in newer versions.
