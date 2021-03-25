@@ -1,15 +1,18 @@
 import Layout from "components/Layout";
-import Header from "../components/Header";
+import { NextSeo } from "next-seo";
 import Post from "../components/Post";
-import Seo from "../components/Seo";
 import getPosts from "../lib/getPosts.js";
 import config from "../site.config";
 
 export default function Home({ posts }) {
-  const { title, description } = config;
+  const { title, description, url, tagline } = config;
   return (
     <Layout>
-      <Seo {...{ title, description }} />
+      <NextSeo
+        title={`${title} - ${tagline}`}
+        description={description}
+        canonical={url}
+      />
       <main className="mt-12">
         {posts.map((post) => (
           <Post key={post.slug} post={post} />
