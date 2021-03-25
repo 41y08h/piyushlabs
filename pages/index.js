@@ -12,6 +12,9 @@ export default function Home({ posts }) {
         title={`${title} - ${tagline}`}
         description={description}
         canonical={url}
+        openGraph={{
+          type: "website",
+        }}
       />
       <main className="mt-12">
         {posts.map((post) => (
