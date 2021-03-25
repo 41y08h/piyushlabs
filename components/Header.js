@@ -14,7 +14,7 @@ export default function Header() {
             <span className="font-extrabold text-2xl logo-text">
               Piyush Labs
             </span>
-            <span className="font-light text-sm">
+            <span className="font-light text-sm text-gray-400">
               Enforcing Learning-by-doing
             </span>
           </div>
