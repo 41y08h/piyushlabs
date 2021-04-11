@@ -1,0 +1,86 @@
+---
+title: "How to send mails using nodemailer and gmail"
+description: "This short tutorial teaches you how you can send mails using gmail very easily."
+publishedOn: "2021-04-11"
+tags: ["node.js", "nodemailer", "express"]
+---
+
+import Link from "next/link";
+
+## Introduction
+
+This short turorial will cover how you can send mailes using nodemailer and gmail and use it in your node.js applications. You can do various things such as - sending confirmation mails, sending OTPs and much more.
+
+All the code for this project lives in [this repo](https://github.com/41y08h/nodemailer-gmail).
+
+You should follow every step carefully till end otherwise you may face some unwanted problems.
+
+## What does Nodemailer do?
+
+Nodemailer helps you to send mails in node.js default way of sending mail (using SMTP) and exposes simple APIs to do that.
+
+However, you can use Nodemailer with AWS, SendGrid, MailGun or any other similar mail delivering service to send mails.
+
+In simple words, Nodemailer abstracts away the common logic of sending mails irrespective of the service (like AWS or SendGrid) you want to use. If you don't want to use any external service you can use the default SMTP method.
+
+## Code
+
+### Transporter
+
+```js
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "<your gmail here>",
+    pass: "<your gmail password here>",
+  },
+});
+```
+
+Here in this code we are creating a transporter which is the actual service thing that I told you above.We are telling Nodemailer to use Gmail as the service and we provide our credentials to send the mail.
+
+Now that we have defined how we will send our mails, let's use this transporter to send some mails.
+
+### Sending mails
+
+```js
+transporter
+  .sendMail({
+    to: "mtierapqptvlupktsu@twzhhq.online", // get a temp mail from https://10minutemail.com/
+    from: "<your gmail here>",
+    subject: "Hello from NODE",
+    html: "<h1>This is rendered as &lt;h1/&gt; tag in mail</h1>",
+  })
+  .then(() => console.log("Mail sent successfully"))
+  .catch((err) => console.log(err.message));
+```
+
+Here we are composing our mail, this is self-explanatory and the options are very usual that you specify when you send any other mail yourself.
+
+You tried sending mails, but this didn't worked right ? The reason it didn't work because Google is being smart securing your account from hackers and blocking any bot sending mails rather than you.
+
+Google has a concept of Less secure apps and after turing it on you are telling Google to turn off this security measure.
+
+Try turning on this option and enjoy sending mails.
+
+## Optimizations (Important)
+
+At this point, you are able to send mails using Nodemailer and Gmail but we need to do some optimizations to this code.
+
+Hide your gmail address and password in your code by using [dotenv](https://www.npmjs.com/package/dotenv). So install `dotenv` and configure you project.
+
+**Sending mails with Gmail and Nodemailer is not recommended** mainly because of Google being tough with bots. If you want to use this in a production application, you should use any different service otherwise you may face some problems only occurring in production not in development.
+
+## Conclusion
+
+Sending mails in a Node.js application is mostly done using Nodemailer as they say the their [documentation](https://nodemailer.com/about). The mail thing you want to look for when sending mails is how you are delivering that mail.
+
+### My opinion
+
+Gmail is meant for sending personal mails. But if you want a service in your application that sends mail, you should look for a different service.
+
+Enjoy sending mails and thanks for reading till here.
+
+Still reading ? You're amazing.

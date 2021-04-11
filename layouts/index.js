@@ -1,6 +1,7 @@
 import Layout from "components/Layout";
 import { NextSeo } from "next-seo";
 import config from "../site.config";
+import { MDXProvider } from "@mdx-js/react";
 
 export default function Index({ frontMatter, children }) {
   const path = frontMatter.__resourcePath.replace(/\.mdx/, "");
@@ -32,7 +33,15 @@ export default function Index({ frontMatter, children }) {
           {frontMatter.title}
         </h1>
       </div>
-      <article className="prose mt-8">{children}</article>
+      <article className="prose mt-8">
+        <MDXProvider
+          components={{
+            a: (props) => <a target="_blank" {...props} />,
+          }}
+        >
+          {children}
+        </MDXProvider>
+      </article>
     </Layout>
   );
 }
